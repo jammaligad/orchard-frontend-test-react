@@ -1,5 +1,12 @@
 # Interface Development Test
 
+## Author
+
+- Juan Alphonso D. Maligad
+
+## Instructions
+
+```
 ## Design assets
 * Invision public URL: https://invis.io/N312IJ0C8GMK
 * Assets used in the build have been packaged under the `/assets` folder.
@@ -32,4 +39,10 @@ We are looking for your ability to bring life to static designs. During that pro
 * **Interface:** Semantic markup styling.
 * **Git:** Bonus points for submission on a github account showing multiple commits.
 * **Quality:** Production-grade build and precision.
+```
 
+## Tech Stack
+
+- ReactJS // I have 4~5 years of experience developing frontend applications using React.
+- TailwindCSS // In my opinion, TailwindCSS is the most convenient and straight to the point CSS framework.
+- Vite // Vite is an extremely fast build tool that is also convenient in development. This is also becoming the industry-standard.
