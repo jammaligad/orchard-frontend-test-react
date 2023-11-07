@@ -1,5 +1,15 @@
+import SectionOne from 'components/SectionOne'
+import SectionTwo from 'components/SectionTwo'
+
+import 'index.css'
+
 function App() {
-  return <div>orchard-frontend-test-react</div>
+  return (
+    <main className="app-container">
+      <SectionOne />
+      <SectionTwo />
+    </main>
+  )
 }
 
 export default App
