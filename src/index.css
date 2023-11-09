@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans Light';
+  src: url('./assets/fonts/OpenSans/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans Semibold';
+  src: url('./assets/fonts/OpenSans/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('./assets/fonts/OpenSans_Condensed/OpenSans_Condensed-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed Light';
+  src: url('./assets/fonts/OpenSans_Condensed/OpenSans_Condensed-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans SemiCondensed';
+  src: url('./assets/fonts/OpenSans_SemiCondensed/OpenSans_SemiCondensed-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans SemiCondensed Light';
+  src: url('./assets/fonts/OpenSans_SemiCondensed/OpenSans_SemiCondensed-Light.ttf');
+}
+
 @layer base {
   html, body {
     margin: 0;
@@ -10,6 +45,7 @@
 
   .app-container {
     margin: auto;
+    padding: 10rem 6rem;
     max-width: 1280px;
   }
 }
