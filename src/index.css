@@ -45,7 +45,30 @@
 
   .app-container {
     margin: auto;
-    padding: 10rem 6rem;
     max-width: 1280px;
+
+    @media (min-width: 1024px) {
+      padding: 10rem 6rem;
+    }
+  }
+
+  .section {
+    @media (max-width: 720px) {
+      opacity: 0;
+      transform: translate(0, 10vh);
+      transition: all 1s;
+    }
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  .section-one-images {
+    height: 340px;
+    @media (min-width: 380px) {
+      height: 460px;
+    }
   }
 }
