@@ -7,7 +7,7 @@ import imageThree from '../assets/component-01/Image-03.jpg'
 import { PageProps, SectionProps } from 'types'
 import { FC } from 'react'
 
-const PageOne: FC<PageProps> = ({ reference }) => {
+const PageOne: FC<PageProps> = ({ reference, handleImageClick }) => {
   return (
     <div
       ref={reference}
@@ -17,6 +17,7 @@ const PageOne: FC<PageProps> = ({ reference }) => {
         <div className="relative w-full">
           <img
             src={imageOne}
+            onClick={() => handleImageClick && handleImageClick('image-1')}
             className="relative z-10 mx-auto shadow-lg min-[320px]:top-14 min-[320px]:w-36 min-[380px]:top-32 min-[380px]:w-40"
           />
         </div>
@@ -43,7 +44,7 @@ const PageOne: FC<PageProps> = ({ reference }) => {
   )
 }
 
-const PageTwo: FC<PageProps> = ({ reference }) => {
+const PageTwo: FC<PageProps> = ({ reference, handleImageClick }) => {
   return (
     <div ref={reference} className="relative h-full w-full py-8 sm:hidden">
       <div className="w-full p-8 text-center">
@@ -54,8 +55,16 @@ const PageTwo: FC<PageProps> = ({ reference }) => {
         </p>
       </div>
       <div className="relative flex h-72 w-full space-x-4 p-4">
-        <img src={imageTwo} className="absolute left-10 h-36" />
-        <img src={imageThree} className="absolute right-10 top-32 h-36" />
+        <img
+          src={imageTwo}
+          className="absolute left-10 h-36"
+          onClick={() => handleImageClick && handleImageClick('image-2')}
+        />
+        <img
+          src={imageThree}
+          className="absolute right-10 top-32 h-36"
+          onClick={() => handleImageClick && handleImageClick('image-3')}
+        />
       </div>
       <div className="w-full space-y-4 p-8 text-center ">
         <p className="font-open-sans-semibold text-sm uppercase text-orchard-red">
@@ -70,7 +79,12 @@ const PageTwo: FC<PageProps> = ({ reference }) => {
   )
 }
 
-const SectionOne: FC<SectionProps> = ({ activePage, reference, page }) => {
+const SectionOne: FC<SectionProps> = ({
+  activePage,
+  reference,
+  page,
+  handleImageClick
+}) => {
   return (
     <section
       id="section-ingredients"
@@ -84,17 +98,20 @@ const SectionOne: FC<SectionProps> = ({ activePage, reference, page }) => {
             <div className="h-max w-full">
               <img
                 src={imageOne}
-                className="h-full border border-neutral-900 shadow-lg"
+                onClick={() => handleImageClick && handleImageClick('image-1')}
+                className="h-full border border-neutral-900 shadow-lg hover:cursor-pointer"
               />
             </div>
             <div className="w-full space-y-4">
               <img
                 src={imageTwo}
-                className="border border-neutral-900 shadow-lg"
+                onClick={() => handleImageClick && handleImageClick('image-2')}
+                className="border border-neutral-900 shadow-lg hover:cursor-pointer"
               />
               <img
                 src={imageThree}
-                className="border border-neutral-900 shadow-lg"
+                onClick={() => handleImageClick && handleImageClick('image-3')}
+                className="border border-neutral-900 shadow-lg hover:cursor-pointer"
               />
             </div>
             <div className="w-full space-y-10 sm:hidden lg:block">
