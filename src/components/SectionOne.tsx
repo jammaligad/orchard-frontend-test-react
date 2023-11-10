@@ -4,7 +4,10 @@ import imageOne from '../assets/component-01/Image-01.jpg'
 import imageTwo from '../assets/component-01/Image-02.jpg'
 import imageThree from '../assets/component-01/Image-03.jpg'
 
-const PageOne = ({ reference }) => {
+import { PageProps, SectionProps } from 'types'
+import { FC } from 'react'
+
+const PageOne: FC<PageProps> = ({ reference }) => {
   return (
     <div
       ref={reference}
@@ -40,10 +43,10 @@ const PageOne = ({ reference }) => {
   )
 }
 
-const PageTwo = ({ reference }) => {
+const PageTwo: FC<PageProps> = ({ reference }) => {
   return (
     <div ref={reference} className="relative h-full w-full py-8 sm:hidden">
-      <div className="section-one-description w-full p-8 text-center">
+      <div className="w-full p-8 text-center">
         <p className="font-open-sans-light font-light leading-relaxed text-gray-400 min-[380px]:text-xl">
           This can be reversed by focusing on high-quality ingredients and being
           mindful as your appetite guides you to consume according to your
@@ -67,7 +70,7 @@ const PageTwo = ({ reference }) => {
   )
 }
 
-const SectionOne = ({ activePage, reference, page }) => {
+const SectionOne: FC<SectionProps> = ({ activePage, reference, page }) => {
   return (
     <section
       id="section-ingredients"
@@ -76,30 +79,58 @@ const SectionOne = ({ activePage, reference, page }) => {
       })}
     >
       {page === 1 && (
-        <div className="hidden w-full space-x-6 sm:relative sm:flex">
-          <div className="h-max w-full">
-            <img
-              src={imageOne}
-              className="h-full border border-neutral-900 shadow-lg"
-            />
+        <>
+          <div className="hidden w-full space-x-6 sm:relative sm:flex sm:p-8 lg:p-0">
+            <div className="h-max w-full">
+              <img
+                src={imageOne}
+                className="h-full border border-neutral-900 shadow-lg"
+              />
+            </div>
+            <div className="w-full space-y-4">
+              <img
+                src={imageTwo}
+                className="border border-neutral-900 shadow-lg"
+              />
+              <img
+                src={imageThree}
+                className="border border-neutral-900 shadow-lg"
+              />
+            </div>
+            <div className="w-full space-y-10 sm:hidden lg:block">
+              <div className="w-full">
+                <h1 className="pb-4 font-open-sans-light text-2xl uppercase text-gray-300">
+                  Answer your body&apos;s needs
+                </h1>
+                <hr />
+                <p className="pr-1 pt-8 font-open-sans-light font-light leading-relaxed text-gray-400">
+                  The way ingredients are sourced affects the way we nourish our
+                  bodies. Author Mark Schatzer believes our body naturally
+                  develops an appetite for the foods and nutrients it needs to
+                  be healthy, but that artificial flavourings are getting in the
+                  way. This can be reversed by focusing on high-quality
+                  ingredients and being mindful as your appetite guides you to
+                  consume according to your body&apos;s needs.
+                </p>
+              </div>
+              <div className="w-full space-y-4">
+                <p className="font-open-sans-semibold text-sm uppercase text-orchard-red">
+                  Be Mindful
+                </p>
+                <p className="font-open-sans-semibold leading-relaxed text-gray-300">
+                  Sourcing local or organic food is a good way to start being
+                  more mindful about what you&apos;re cooking and eating.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="w-full space-y-4">
-            <img
-              src={imageTwo}
-              className="border border-neutral-900 shadow-lg"
-            />
-            <img
-              src={imageThree}
-              className="border border-neutral-900 shadow-lg"
-            />
-          </div>
-          <div className="w-full space-y-10">
-            <div className="w-full">
+          <div className="flex w-full space-y-8 px-12 min-[320px]:hidden sm:block lg:hidden">
+            <div className="w-full  text-center">
               <h1 className="pb-4 font-open-sans-light text-2xl uppercase text-gray-300">
                 Answer your body&apos;s needs
               </h1>
               <hr />
-              <p className="pr-1 pt-8 font-open-sans-light font-light leading-relaxed text-gray-400">
+              <p className="pr-1 pt-8 font-open-sans-light text-lg font-light leading-relaxed text-gray-400">
                 The way ingredients are sourced affects the way we nourish our
                 bodies. Author Mark Schatzer believes our body naturally
                 develops an appetite for the foods and nutrients it needs to be
@@ -109,20 +140,20 @@ const SectionOne = ({ activePage, reference, page }) => {
                 to your body&apos;s needs.
               </p>
             </div>
-            <div className="w-full space-y-4">
-              <p className="font-open-sans-semibold text-sm uppercase text-orchard-red">
+            <div className="w-full space-y-4 text-center">
+              <p className="font-open-sans-semibold text-lg uppercase text-orchard-red">
                 Be Mindful
               </p>
-              <p className="font-open-sans-semibold leading-relaxed text-gray-300">
+              <p className="font-open-sans-semibold text-lg leading-relaxed text-gray-300">
                 Sourcing local or organic food is a good way to start being more
                 mindful about what you&apos;re cooking and eating.
               </p>
             </div>
           </div>
-        </div>
+        </>
       )}
-      {page === 1 && <PageOne reference={reference} activePage={activePage} />}
-      {page === 2 && <PageTwo reference={reference} activePage={activePage} />}
+      {page === 1 && <PageOne reference={reference} />}
+      {page === 2 && <PageTwo reference={reference} />}
     </section>
   )
 }
