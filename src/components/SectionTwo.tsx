@@ -67,7 +67,7 @@ const SectionTwo: FC<SectionProps> = ({ reference, page, activePage }) => {
                   </p>
                 </div>
                 <button
-                  onClick={() => null}
+                  onClick={() => console.log(post.key)}
                   className="border-b border-b-orchard-red pb-1 font-open-sans-semibold text-sm uppercase text-gray-300 hover:text-gray-100"
                 >
                   Read More
